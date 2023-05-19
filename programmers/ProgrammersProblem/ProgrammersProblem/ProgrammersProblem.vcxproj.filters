@@ -210,5 +210,11 @@
     <ClCompile Include="카펫.cpp">
       <Filter>소스 파일\Level2</Filter>
     </ClCompile>
+    <ClCompile Include="기사단원의 무기.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="모의고사.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
