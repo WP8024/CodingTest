@@ -216,5 +216,20 @@
     <ClCompile Include="모의고사.cpp">
       <Filter>소스 파일\Level1</Filter>
     </ClCompile>
+    <ClCompile Include="명예의 전당(1).cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="과일장수.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="로또의 최고 순위와 최저 순위.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="기능개발.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="할인 행사.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
