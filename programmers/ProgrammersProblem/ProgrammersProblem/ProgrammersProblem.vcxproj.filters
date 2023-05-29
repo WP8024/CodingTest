@@ -231,5 +231,34 @@
     <ClCompile Include="할인 행사.cpp">
       <Filter>소스 파일\Level2</Filter>
     </ClCompile>
+    <ClCompile Include="체육복.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="숫자 문자열과 영단어.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="소수 찾기.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="소수 만들기.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="실패율.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="[1차] 다트 게임.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="덧칠하기.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="숫자 짝궁.cpp">
+      <Filter>소스 파일\Level1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="note.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>

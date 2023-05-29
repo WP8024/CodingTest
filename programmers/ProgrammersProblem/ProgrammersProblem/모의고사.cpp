@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <iostream>
 using namespace std;
 
 vector<int> solution(vector<int> answers) {
@@ -10,42 +9,30 @@ vector<int> solution(vector<int> answers) {
     int b[9] = { 2,1,2,3,2,4,2,5 };
     int c[11] = { 3,3,1,1,2,2,4,4,5,5 };
     vector<int> count(3, 0);
-
     int max = 0;
     for (int i = 0; i < answers.size(); i++) {
-        if (answer[i] == a[i % 5]) {
+        int t1 = i % 5, t2 = i % 8, t3 = i % 10;
+        if (answers[i] == a[t1]) {
             count[0]++;
         }
-        if (answer[i] == b[i % 8]) {
+        if (answers[i] == b[t2]) {
             count[1]++;
         }
-        if (answer[i] == c[i % 10]) {
+        if (answers[i] == c[t3]) {
             count[2]++;
         }
     }
-    for (int i = 0; i < 3; i++) {
-        if (count[i] > max) {
-            max = count[i];
+
+    for (auto i : count) {
+        if (i > max) {
+            max = i;
         }
     }
-    for (int i = 0; i < 3; i++) {
+
+    for (int i = 0; i < count.size(); i++) {
         if (max == count[i]) {
             answer.push_back(i + 1);
         }
     }
     return answer;
-}
-
-int main() {
-    int a = -1;
-    vector<int> temp;
-    while (a != 0) {
-        cin >> a;
-        if (a == 0) {
-            break;
-        }
-        temp.push_back(a);
-    }
-    solution(temp);
-    return 0;
 }
