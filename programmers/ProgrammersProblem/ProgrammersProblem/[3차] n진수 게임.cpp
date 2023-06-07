@@ -29,8 +29,3 @@ string solution(int n, int t, int m, int p) {
     }
     return answer;
 }
-
-int main() {
-    solution(2, 4, 2, 1);
-    return 0;
-}
