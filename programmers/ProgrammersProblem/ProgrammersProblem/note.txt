@@ -8,6 +8,24 @@
     unstable:selection,quick,heap sort
     stable:merge sort
 
+    Level1 최대공약수와 최소공배수
+    Level2 N개의 최소공배수
+    유클리드 호제법사용시 간단하게 구할수 있다.
+    최대 공약수
+    int gcd(int a,int b){
+        int c;
+        while(b !=0){
+            c= a%b;
+            a=b;
+            b=c;
+        }
+        return a;
+    }
+    최소 공배수
+    int lcm(int a, int b){ 
+        return a*b /gcd(a,b);
+    }
+
 
     자주 쓰는 string 함수들
     isdigit(c) 숫자여부 확인 true,false;

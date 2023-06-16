@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include <map>
+#include <stack>
 #include <algorithm>
 using namespace std;
 
@@ -27,8 +27,43 @@ int solution(vector<int> citations) {
     return answer;
 }
 
+int solution1(vector<int> citations) {
+    int answer = 0;
+    stable_sort(citations.begin(), citations.end(), [](int a, int b)->bool {
+        return a > b;
+    });
+    stack<int> st;
+    int h = 0;
+    int n = citations.size();
+    for (auto index : citations) {
+        if (st.empty()) {
+            st.push(index);
+            h = index;
+        }
+        else {
+            if (st.size() < h) {
+                st.push(index);
+                h = index;
+            }
+        }
+    }
+    while (!st.empty()) {
+        if (st.top() > h && st.size() > h) {
+            h++;
+        }
+        else if (st.top() == h || st.size() == h) {
+            st.pop();
+        }
+        else {
+            answer = h;
+            break;
+        }
+    }
+
+    return answer;
+}
 
 int main() {
-    solution({ 3,0,6,1,5 });
+    solution1({ 3,0,6,1,5 });
     return 0;
 }
