@@ -4,19 +4,23 @@
 using namespace std;
 
 vector<int> solution(vector<int> numbers) {
-    vector<int> answer;
-    int start = 0;
-    for (int i = 0; start < numbers.size(); i++) {
-        if (i == numbers.size()) {
-            answer.push_back(-1);
-            start++;
-            i = start;
+    vector<int> answer(numbers.size(), -1);
+    stack<int> st;
+
+    for (int i = 0; i < numbers.size(); i++) {
+        if (!st.empty() && numbers[st.top()] < numbers[i]) {
+            while (!st.empty()) {
+                if (numbers[st.top()] < numbers[i]) {
+                    answer[st.top()] = numbers[i];
+                    st.pop();
+                }
+                else {
+                    break;
+                }
+            }
         }
-        if (numbers[start] < numbers[i]) {
-            answer.push_back(numbers[i]);
-            start++;
-            i = start;
-        }
+        st.push(i);
     }
+
     return answer;
 }

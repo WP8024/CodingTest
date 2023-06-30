@@ -35,3 +35,12 @@
 
     정수 char 변환 i+'0'
     char 정수 변환 c-'0'
+
+
+
+    priority queue 사용시
+    헤더 <queue>
+    priority_queue<자료형,컨테이너,비교함수> 변수명
+    비교함수로 정렬
+    priority_queue<자료형> 변수명
+    내림차순으로 정렬
