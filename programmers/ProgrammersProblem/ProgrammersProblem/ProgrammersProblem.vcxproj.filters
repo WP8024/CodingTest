@@ -348,6 +348,30 @@
     <ClCompile Include="[3차] 파일명 정렬.cpp">
       <Filter>소스 파일\Level2</Filter>
     </ClCompile>
+    <ClCompile Include="[3차] 압축.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="가장 큰 수.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="연속된 부분 수열의 합.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="디펜스 게임.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="두 큐 합 같게 만들기.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="다리를 지나는 트럭.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="마법의 엘리베이터.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="후보키.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="note.txt">
