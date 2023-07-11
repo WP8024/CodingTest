@@ -1,33 +1,71 @@
 #include <string>
 #include <vector>
-#include <algorithm>
+#include <stack>
 using namespace std;
 
-bool cmp(pair<int, int> a, pair<int, int> b) {
-    if (a.first == b.first) {
-        return a.second < b.second;
+struct Energy {
+    int cost;
+    int requirement;
+};
+
+bool operator<(const Energy& a, const Energy& b) {
+    if (a.cost == b.cost) {
+        return a.requirement > b.requirement;
     }
-    return a.first > b.first;
+    return a.cost < b.cost;
+
+    if (a.requirement == b.requirement) {
+        return a.cost < b.cost;
+    }
+    return a.requirement > b.requirement;
 }
+
 
 int solution(int k, vector<vector<int>> dungeons) {
-    int answer = -1;
-    vector<vector<pair<int, int>>> fatiguelist;
-    vector<pair<int, int>> fatigue;
+    int answer = 0;
+    vector<Energy> list;
+    Energy temp;
+    stack<Energy> st;
 
-    for (auto index : dungeons) {
-        fatigue.push_back(make_pair(index[0], index[1]));
+
+
+    for (auto i : dungeons) {
+        temp.cost = i[1];
+        temp.requirement = i[0];
+        list.push_back(temp);
     }
-    sort(fatigue.begin(), fatigue.end(), cmp);
 
-    
+
+
+    for (auto i : list) {
+        if (!st.empty()) {
+            int cost1 = k - st.top().cost;
+            int cost2 = k - i.cost;
+            if (cost1 >= cost2 && k >= st.top().requirement) {
+                st.pop();
+                st.push(i);
+                answer++;
+                k = cost1;
+            }
+            else if (cost1 < cost2 && k >= i.requirement) {
+                k = cost2;
+                answer++;
+            }
+            else {
+                while (!st.empty()) {
+                    if (st.top().requirement > k) {
+                        st.pop();
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+        }
+        else {
+            st.push(i);
+        }
+    }
 
     return answer;
-}
-
-int main() {
-
-    solution(80, { {80, 20},{50, 40},{30, 10} });
-
-    return 0;
 }
