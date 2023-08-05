@@ -381,6 +381,12 @@
     <ClCompile Include="점 찍기.cpp">
       <Filter>소스 파일\Level2</Filter>
     </ClCompile>
+    <ClCompile Include="야근 지수.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="숫자 게임.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="note.txt">
