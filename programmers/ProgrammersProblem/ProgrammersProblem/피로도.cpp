@@ -1,70 +1,47 @@
 #include <string>
 #include <vector>
-#include <stack>
+#include <queue>
+#include <iostream>
 using namespace std;
+struct cmp {
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        if (a.first - a.second < b.first - b.second) {
+            return true;
+        }
+        else if (a.first - a.second == b.first - b.second) {
+            if (a.first < b.first) {
+                return true;
+            }
+            else return false;
+        }
 
-struct Energy {
-    int cost;
-    int requirement;
+        return false;
+
+    }
 };
-
-bool operator<(const Energy& a, const Energy& b) {
-    if (a.cost == b.cost) {
-        return a.requirement > b.requirement;
-    }
-    return a.cost < b.cost;
-
-    if (a.requirement == b.requirement) {
-        return a.cost < b.cost;
-    }
-    return a.requirement > b.requirement;
-}
 
 
 int solution(int k, vector<vector<int>> dungeons) {
     int answer = 0;
-    vector<Energy> list;
-    Energy temp;
-    stack<Energy> st;
-
-
+    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> pq;
 
     for (auto i : dungeons) {
-        temp.cost = i[1];
-        temp.requirement = i[0];
-        list.push_back(temp);
+        pq.push(make_pair(i[0], i[1]));
     }
+    auto t = pq;
+    while (!t.empty()) {
+        cout << "요구량:" << t.top().first << " 소모량:" << t.top().second << endl;
+        t.pop();
+    }
+    while (!pq.empty()) {
 
-
-
-    for (auto i : list) {
-        if (!st.empty()) {
-            int cost1 = k - st.top().cost;
-            int cost2 = k - i.cost;
-            if (cost1 >= cost2 && k >= st.top().requirement) {
-                st.pop();
-                st.push(i);
-                answer++;
-                k = cost1;
-            }
-            else if (cost1 < cost2 && k >= i.requirement) {
-                k = cost2;
-                answer++;
-            }
-            else {
-                while (!st.empty()) {
-                    if (st.top().requirement > k) {
-                        st.pop();
-                    }
-                    else {
-                        break;
-                    }
-                }
-            }
+        if (k >= pq.top().first) {
+            cout << "현재 피로도:" << k << " 요구피로도:" << pq.top().first << " 소모피로도:" << pq.top().second;
+            k -= pq.top().second;
+            cout << " 남은 피로도:" << k << endl;
+            answer++;
         }
-        else {
-            st.push(i);
-        }
+        pq.pop();
     }
 
     return answer;
