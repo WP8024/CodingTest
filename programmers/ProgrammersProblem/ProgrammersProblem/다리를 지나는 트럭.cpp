@@ -1,37 +1,34 @@
 #include <string>
 #include <vector>
-#include <deque>
+#include <queue>
 using namespace std;
+
+
+void dequeue(queue<pair<int, int>>& q, int& w, int& t, int l) {
+    w -= q.front().first;
+    t = q.front().second + l;
+    q.pop();
+    return;
+}
 
 int solution(int bridge_length, int weight, vector<int> truck_weights) {
     int answer = 0;
-    deque<pair<int, int>> dq;
-    int cur_weight = 0;
-    int time = 0;
+    queue<pair<int, int>> q;
+    int cur_w = 0;
+
     for (auto i : truck_weights) {
-        time++;
-        if (cur_weight + i > weight) {
-            while (cur_weight + i > weight) {
-                time = dq.front().second + bridge_length;
-                cur_weight -= dq.front().first;
-                dq.pop_front();
-            }
+        answer++;
+        if (q.size() == bridge_length || q.front().second + bridge_length == answer) {
+            dequeue(q, cur_w, answer, bridge_length);
         }
-        dq.push_back(make_pair(i, time));
-        cur_weight += i;
+        while (cur_w + i > weight) {
+            dequeue(q, cur_w, answer, bridge_length);
+        }
+        q.push(make_pair(i, answer));
+        cur_w += i;
     }
 
-    if (!dq.empty()) {
-        time = dq.back().second + bridge_length;
-    }
-    answer = time;
+    answer = q.back().second + bridge_length;
 
     return answer;
-}
-
-int main() {
-
-    solution(2, 10, { 7, 4, 5, 6 });
-
-    return 0;
 }
