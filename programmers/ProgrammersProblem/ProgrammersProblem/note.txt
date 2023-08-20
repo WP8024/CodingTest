@@ -44,3 +44,21 @@
     비교함수로 정렬
     priority_queue<자료형> 변수명
     내림차순으로 정렬
+
+
+    map or set stl에서 key값에 구조체로 데이터 형식을 넣을시
+    key값을 탐색할수 있게 정의해줘야 한다.
+    이진트리인 map에서 key탐색을 위해선 대소비교가 가능해야함으로
+    operator(연산자 오버라이딩)을 사용해 <,> 기호를 재정의 함으로 대소비교가 가능하게 할 수 있다.
+    ex
+    struct Point{
+        int x,y;
+
+        bool operator <(const Point &var) const{
+            if( x!= var.x){
+                return x< var.x;    
+            }
+            else{
+                return y< var.y;
+            }
+    }
