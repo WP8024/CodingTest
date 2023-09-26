@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\Level3">
       <UniqueIdentifier>{c00d1055-a497-461c-81c0-bf77a212c95b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\PPCP 모의고사 #1">
+      <UniqueIdentifier>{5e825e43-539a-4616-a036-e98ccddc1cb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="바탕화면정리.cpp">
@@ -428,6 +431,18 @@
     </ClCompile>
     <ClCompile Include="디스크 컨트롤러.cpp">
       <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="네트워크.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="여행경로.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="PPCP모의고사 1번 외톨이 알파벳.cpp">
+      <Filter>소스 파일\PPCP 모의고사 #1</Filter>
+    </ClCompile>
+    <ClCompile Include="PPCP모의고사 3번 유전법칙.cpp">
+      <Filter>소스 파일\PPCP 모의고사 #1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
