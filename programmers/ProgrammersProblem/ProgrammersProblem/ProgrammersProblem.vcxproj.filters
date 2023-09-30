@@ -444,6 +444,24 @@
     <ClCompile Include="PPCP모의고사 3번 유전법칙.cpp">
       <Filter>소스 파일\PPCP 모의고사 #1</Filter>
     </ClCompile>
+    <ClCompile Include="게임 맵 최단거리.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="단어변환.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="의상.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="기지국 설치.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="최고의 집합.cpp">
+      <Filter>소스 파일\Level3</Filter>
+    </ClCompile>
+    <ClCompile Include="삼각 달팽이.cpp">
+      <Filter>소스 파일\Level2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="note.txt">
