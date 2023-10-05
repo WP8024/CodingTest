@@ -62,3 +62,53 @@
                 return y< var.y;
             }
     }
+
+
+
+    클래스나 구조체 자체 필드(변수) 사용시 이용되는 연산자
+    . 과 -> 차이 (참조 요소와 포인터 요소)
+
+    .: 참조로 요소 선택(점 앞에 변수나 포인터가 아닌 저장하려는 데이터가 있을때 사용)
+    ->: 포인터로 요소 선택(화살표 앞에 포인터가 있을 경우 사용)
+
+    일반적 구조체나 클래스같은 사용자 정의 데이터 타입의 경우 동적사용으로 선언하지 않을경우
+    포인터를 사용하지 않아도 됨으로 . 참조로 요소를 선택
+    동적으로 사용하는 경우 포인터가 필요하므로 포인터요소를 선택하는 ->를 사용한다.
+
+    ex)
+    class Monster{
+    public:
+        int HP =100;
+        int Damage=20;
+        char *name= "가나다라마바사";
+    };
+    struct Player{
+        int HP =100;
+        int Damage=20;
+        char *name= "가나다라마바사";
+    };
+
+    void main(){
+        Player player //일반적 구조체 선언
+
+        Player* player2 = new Player; //구조체를 동적할당
+        player2->Damage=30; 
+
+        Monster monster; //클래스(객체) 선언
+        monster.Damage = 50;
+
+        Monster* monster2 = new Monster(); //클래스(객체) 동적선언
+        
+        cout<<"player의 데미지:"<<player.Damage<<endl;
+        cout<<"player2의 데미지:"<<player2->Damage<<endl;
+
+        cout<<"monster의 데미지:"<<monster.Damage<<endl;
+        cout<<"monster2의 데미지:"<<monster2->Damage<<endl;
+
+
+    삼항연산자
+    조건문 ? 참 : 거짓
+    ex)
+    n%10==0 ? n/10 : (n/10)+1;
+    a < b ? a : b;
+    }
